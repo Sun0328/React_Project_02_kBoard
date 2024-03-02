@@ -1,0 +1,50 @@
+.event-container {
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: wheat;
+}
+
+.title {
+    font-size: 26px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.addEvent-btn {
+    width: 160px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+}
+
+.addEvent-btn:hover {
+    color: white;
+    background-color: rgb(223, 82, 47);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.eventName-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 160px;
+    height: 35px;
+    margin: 15px 0px;
+    border-radius: 6px;
+}
+
+.eventName-container:hover {
+    color: white;
+    background-color: rgb(223, 82, 47);
+}
+
+.active {
+    color: white;
+    background-color: rgb(223, 82, 47);
+}
