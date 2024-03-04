@@ -9,8 +9,7 @@ const App = () => {
     const storedEvents = localStorage.getItem('events');
     if (!storedEvents) {
       const defaultEvents = [
-        { id: 1, eventName: 'Project' },
-        // Add more default events here if needed
+        // Add default events here if needed
       ];
       localStorage.setItem('events', JSON.stringify(defaultEvents));
       return defaultEvents;
