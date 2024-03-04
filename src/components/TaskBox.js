@@ -15,9 +15,9 @@ const TaskBox = ({ removeItemByIdFromLocalStorage }) => {
     const storedTasks = localStorage.getItem('tasks');
     if (!storedTasks) {
       const defaultTasks = [
-        { id: uuidv4(), event_id: 0, taskName: 'task1', taskContent: 'content1', state: 'todo', columnId: 1 },
-        { id: uuidv4(), event_id: 0, taskName: 'task2', taskContent: 'process', state: 'processed', columnId: 2 },
-        { id: uuidv4(), event_id: 0, taskName: 'task3', taskContent: 'completed', state: 'completed', columnId: 3 }
+        { id: uuidv4(), event_id: 1, taskName: 'task1', taskContent: 'content1', state: 'todo', columnId: 1 },
+        { id: uuidv4(), event_id: 1, taskName: 'task2', taskContent: 'process', state: 'processed', columnId: 2 },
+        { id: uuidv4(), event_id: 1, taskName: 'task3', taskContent: 'completed', state: 'completed', columnId: 3 }
         // Add more default tasks here if needed
       ];
       localStorage.setItem('tasks', JSON.stringify(defaultTasks)); // Use 'tasks' as the key here

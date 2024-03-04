@@ -9,7 +9,7 @@ const App = () => {
     const storedEvents = localStorage.getItem('events');
     if (!storedEvents) {
       const defaultEvents = [
-        { id: 0, eventName: 'Project' },
+        { id: 1, eventName: 'Project' },
         // Add more default events here if needed
       ];
       localStorage.setItem('events', JSON.stringify(defaultEvents));
@@ -18,11 +18,13 @@ const App = () => {
     return JSON.parse(storedEvents);
   });
 
-  useEffect(() => {
-    localStorage.setItem('events', JSON.stringify(events));
-  }, [events]);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (events.length === 1) {
+      navigate(`/${events[0].id}`);
+    }
+  }, [events, navigate]);
 
   // Remove event from localStorage
   const removeItemByIdFromLocalStorage = (idToRemove) => {
@@ -46,7 +48,7 @@ const App = () => {
         // update state
         setEvents(updatedEvents);
 
-        if (updatedEvents === '') {
+        if (updatedEvents.length === 0) {
           navigate('/0');
         } else {
           const link = updatedEvents[0].id;
@@ -73,9 +75,9 @@ const App = () => {
   return (
 
     <div className='container'>
-      <EventBar events={events} setEvents={setEvents} handleLink={handleLink} />
+      <EventBar events={events} setEvents={setEvents} handleLink={handleLink}/>
       <Routes>
-        <Route path='/:eventId' element={<TaskBox removeItemByIdFromLocalStorage={removeItemByIdFromLocalStorage} />} />
+        <Route path='/:eventId' element={<TaskBox removeItemByIdFromLocalStorage={removeItemByIdFromLocalStorage}/>} />
         <Route path='/' element={<Navigate to="/0" />} />
       </Routes>
     </div>

@@ -11,7 +11,11 @@ const EventBar = ({ events, setEvents, handleLink }) => {
     const eventId = uuidv4();
     if (eventName) {
       const newEvent = { id: eventId, eventName: eventName };
+      // Update state
       setEvents([...events, newEvent]);
+      // Update local storage
+      const updatedEvents = [...events, newEvent];
+      localStorage.setItem('events', JSON.stringify(updatedEvents));
       handleLink(newEvent.id);
     } else {
       alert("Event name cannot be empty. Please enter a valid event name.");
@@ -24,10 +28,10 @@ const EventBar = ({ events, setEvents, handleLink }) => {
       <div className='main'>
         <button onClick={handleAddEvent} className='addEvent-btn'>+</button>
         {events.length === 0 ? (
-          <Event eventName='Add New Event' />
+          <Event eventName='Add New Event' handleAddEvent={handleAddEvent} />
         ) : (
           events.map(item => (
-            <Event key={uuidv4()} id={item.id} eventName={item.eventName} />
+            <Event key={uuidv4()} id={item.id} eventName={item.eventName} handleAddEvent={handleAddEvent} />
           ))
         )}
       </div>

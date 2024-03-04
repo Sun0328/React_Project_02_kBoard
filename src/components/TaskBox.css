@@ -19,11 +19,10 @@
 }
 
 .remove-event-btn:hover {
-    font-size: 15px;
+    color: red;
     background-color: rgb(230, 238, 238);
     cursor: pointer;
     transition: background-color 0.5s;
-    transition: font-size 0.5s;
 }
 
 .main-container {
