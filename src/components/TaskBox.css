@@ -1,0 +1,109 @@
+.task-container {
+    margin-left: 50px;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.remove-event-btn {
+    width: 140px;
+    height: 30px;
+    margin-left: 20px;
+    font-style: italic;
+    background-color: #fff;
+    border: 2px solid red;
+    border-radius: 6px;
+}
+
+.remove-event-btn:hover {
+    font-size: 15px;
+    background-color: rgb(230, 238, 238);
+    cursor: pointer;
+    transition: background-color 0.5s;
+    transition: font-size 0.5s;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.main-container>* {
+    width: 300px;
+    margin: 0px 20px;
+    padding-bottom: 30px;
+    background-color: rgb(243, 246, 248);
+    border-radius: 12px;
+}
+
+.task-state {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.addTask-btn {
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(230, 238, 238);
+}
+
+.addTask-btn:hover {
+    background-color: rgb(208, 212, 212);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* For task card in Task.js */
+
+.task-card-container {
+    width: 250px;
+    margin-top: 15px;
+    margin-left: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.task-card-container:last-child {
+    margin-bottom: 10px;
+}
+
+.task-name {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.task-content {
+    color: rgb(166, 166, 166);
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.task-delete-btn {
+    display: inline-block;
+    width: 25px;
+    transform: translateX(210px);
+    /* 使用 transform 属性移动元素 */
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.task-delete-btn:hover {
+    font-size: 30px;
+    color: red;
+    transition: font-size 0.3s;
+    cursor: pointer;
+}
