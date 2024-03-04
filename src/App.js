@@ -46,7 +46,7 @@ const App = () => {
         // update state
         setEvents(updatedEvents);
 
-        if (updatedEvents == '') {
+        if (updatedEvents === '') {
           navigate('/0');
         } else {
           const link = updatedEvents[0].id;
